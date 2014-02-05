@@ -12,13 +12,15 @@
 
 -----------*/
 
+
+
 @font-face {
 	font-family: 'puls4';
-	src:url('../fonts/puls4.eot');
-	src:url('../fonts/puls4.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/puls4.woff') format('woff'),
-		url('../fonts/puls4.ttf') format('truetype'),
-		url('../fonts/puls4.svg#puls4') format('svg');
+	src:url('../font/puls4.eot');
+	src:url('../font/puls4.eot?#iefix') format('embedded-opentype'),
+		url('../font/puls4.woff') format('woff'),
+		url('../font/puls4.ttf') format('truetype'),
+		url('../font/puls4.svg#puls4') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -45,21 +47,26 @@
 }
 .icon-estrella:before {
 	content: "\e602";
-	margin-right: .5em;
+	margin-right: 0.5em;
 	position: relative;
-	top: .1em;
+	top: 0.15em;
 
 
 }
 .icon-lapiz:before {
 	content: "\e603";
-	margin-right: .5em;
+	margin-right: 0.6em;
 }
 
 /* =========== */
 
 a{
 	color:#22BCE0;
+}
+
+aside
+{
+	display: none;
 }
 
 body{
@@ -106,11 +113,21 @@ header h1{
 	margin: 0 70px 0 0;
 }
 
-header #logo img{
+header #logo
+{
 	border-right: 1px solid white;
 	padding-right: 0.5em;
 	margin-right: 0.5em;
+}
+
+header #logo img{
+	transition: 0.5s;	
 	width: 52px;
+}
+
+header #logo img:hover
+{
+	transform: rotate(360deg); 
 }
 header #avatar{
 	margin: 0.5em 0.5em 0 0; 
@@ -131,7 +148,7 @@ nav{
 
 nav ul {
 	margin: 0;
-	padding: 0;
+	padding: 0 6em 0.5em 0;
 	list-style: none;
 }
 
@@ -145,6 +162,12 @@ nav ul li a{
 	padding: 0.5em;
 	display:block;
 	text-decoration: none;
+	transition:.2s;
+}
+
+nav ul li a:hover
+{
+	background-color: black;
 }
 
 nav ul #publicar_nav {
@@ -159,6 +182,10 @@ nav ul #publicar_nav a{
 	font-style: italic;
 	padding: 0.6em 0.8em;
 	text-shadow: rgba(0,0,0,0.3) 2px 2px 5px;
+}
+
+nav ul #publicar_nav a:hover{
+	box-shadow: 0 0 10px yellow;
 }
 
 #contenido{
@@ -228,9 +255,57 @@ nav ul #publicar_nav a{
 
 }
 
+#contenido .item .votacion a
+{
+	text-decoration: none;
+}
 
 #contenido .item .votacion .comentarios_item,
 #contenido .item .votacion .guardar_item
 {
 	float: right;
+}
+
+#contenido .item .votacion .down{
+	color:orange;
+}
+
+#contenido .item .votacion .guardar_item{
+	color: #FFbe2C;
+}
+
+#contenido .item .votacion .up{
+	color:green;
+}
+
+
+@media screen and (min-width: 800px){
+	#contenido 
+	{
+		overflow: hidden;
+	}
+	#contenido .item
+	{
+		width: 48%;
+		float: left;
+	}
+
+	#contenido .item:nth-child(odd){
+		margin: 0 2% 0 1%;
+	}
+}
+
+@media screen and (min-width: 1000px){
+	aside
+	{
+		display: block;
+		float: right;
+		margin: 1em;
+		width: 25%;
+	}
+	aside video
+	{
+		width: 100%;
+	}
+
 }
